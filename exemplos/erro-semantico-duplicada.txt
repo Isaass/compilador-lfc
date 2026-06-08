@@ -1,0 +1,7 @@
+PROGRAM teste;
+VAR
+    idade: INTEGER;
+    idade: BOOLEAN;
+BEGIN
+    idade := 10;
+END.

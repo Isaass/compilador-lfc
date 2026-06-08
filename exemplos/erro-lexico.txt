@@ -1,0 +1,6 @@
+PROGRAM teste;
+VAR
+    idade: INTEGER;
+BEGIN
+    idade := 70000;
+END.

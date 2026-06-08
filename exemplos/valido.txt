@@ -1,0 +1,11 @@
+PROGRAM teste;
+VAR
+    idade: INTEGER;
+    ativo: BOOLEAN;
+    nome: STRING;
+BEGIN
+    READ(idade);
+    WRITE("Digite sua idade");
+    idade := 25;
+    ativo := TRUE;
+END.

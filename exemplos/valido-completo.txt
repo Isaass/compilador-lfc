@@ -1,0 +1,16 @@
+PROGRAM teste;
+VAR
+    idade: INTEGER;
+    ativo: BOOLEAN;
+BEGIN
+    idade := 18 + 2 * 3;
+    ativo := idade >= 18;
+
+    IF ativo THEN
+        WRITE("Maior de idade")
+    ELSE
+        WRITE("Menor de idade");
+
+    WHILE idade < 25 DO
+        idade := idade + 1;
+END.

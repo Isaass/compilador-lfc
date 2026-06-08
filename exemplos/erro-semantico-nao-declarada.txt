@@ -1,0 +1,6 @@
+PROGRAM teste;
+VAR
+    idade: INTEGER;
+BEGIN
+    salario := 1000;
+END.
