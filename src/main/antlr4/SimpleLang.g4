@@ -165,32 +165,21 @@ CADEIA
 
 CTE
     : [0-9]+
-      {
-          try {
-              long valor = Long.parseLong(getText());
-
-              if (valor > 65535) {
-                  throw new RuntimeException(
-                      "Erro léxico na linha " + getLine() +
-                      ", coluna " + getCharPositionInLine() +
-                      ": constante inteira ultrapassa 2 bytes: " + getText()
-                  );
-              }
-          } catch (NumberFormatException e) {
-              throw new RuntimeException(
-                  "Erro léxico na linha " + getLine() +
-                  ", coluna " + getCharPositionInLine() +
-                  ": constante inteira inválida: " + getText()
-              );
-          }
-      }
     ;
 
 ID
     : [a-z] [a-z0-9]*
       {
           if (getText().length() > 16) {
-              setText(getText().substring(0, 16));
+              String original = getText();
+              String truncado = original.substring(0, 16);
+
+              System.out.println(
+                  "Aviso léxico: identificador '" + original +
+                  "' truncado para '" + truncado + "'."
+              );
+
+              setText(truncado);
           }
       }
     ;

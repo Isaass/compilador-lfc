@@ -1,13 +1,16 @@
 br\compiladores\parser\SimpleLangParser$ExpressaoAditivaContext.class
 br\compiladores\parser\SimpleLangBaseVisitor.class
 br\compiladores\parser\SimpleLangParser$ComandoCompostoContext.class
+br\compiladores\codegen\OtimizadorCodigoTresEnderecos.class
 br\compiladores\semantic\AnalisadorSemantico.class
 br\compiladores\parser\SimpleLangParser$ComandoContext.class
 br\compiladores\semantic\TabelaSimbolos.class
 br\compiladores\semantic\Tipo.class
 br\compiladores\parser\SimpleLangLexer.class
+br\compiladores\codegen\GeradorCodigoTresEnderecos.class
 br\compiladores\parser\SimpleLangParser$ComandoReadContext.class
 br\compiladores\parser\SimpleLangParser$ListaDeclaracoesContext.class
+br\compiladores\codegen\GeradorAssemblyX86.class
 br\compiladores\parser\SimpleLangParser$DeclaracoesContext.class
 br\compiladores\parser\SimpleLangParser.class
 br\compiladores\parser\SimpleLangParser$ExpressaoLogicaContext.class

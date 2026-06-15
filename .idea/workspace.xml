@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="038ba7e3-fa1d-43b5-a448-ce56cd1075b9" name="Changes" comment="" />
+    <list default="true" id="daf48da7-c4be-4f7e-acc9-e0e44973d527" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exemplos/erro-lexico.txt" beforeDir="false" afterPath="$PROJECT_DIR$/exemplos/erro-lexico.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/antlr4/SimpleLang.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr4/SimpleLang.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/compiladores/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/compiladores/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/compiladores/semantic/AnalisadorSemantico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/compiladores/semantic/AnalisadorSemantico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/compiladores/semantic/Simbolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/compiladores/semantic/Simbolo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/compiladores/semantic/TabelaSimbolos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/compiladores/semantic/TabelaSimbolos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/compiladores/semantic/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/compiladores/semantic/Tipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/compiladores/Main$ErroLexicoListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/compiladores/Main$ErroLexicoListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/compiladores/Main$ErroSintaticoListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/compiladores/Main$ErroSintaticoListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/compiladores/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/compiladores/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/compiladores/codegen/GeradorCodigo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/compiladores/codegen/GeradorCodigo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/compiladores/parser/SimpleLangLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/compiladores/parser/SimpleLangLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/compiladores/semantic/AnalisadorSemantico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/compiladores/semantic/AnalisadorSemantico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/compiladores/semantic/Simbolo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/compiladores/semantic/Simbolo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/compiladores/semantic/TabelaSimbolos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/compiladores/semantic/TabelaSimbolos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/compiladores/semantic/Tipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/compiladores/semantic/Tipo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/antlr4/SimpleLangLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/antlr4/SimpleLangLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/antlr4/SimpleLangLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/antlr4/SimpleLangLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,36 +34,17 @@
   </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
-      <entry key="_C:/Users/isaias.santos/Documents/isaias/ATV Linguagens e Compiladores/compilador-lfc" value="3Equ5vwLnLlYAaZbhaJy8pKq7Su" />
+      <entry key="_C:/Users/isaias.santos/Documents/isaias/ATV Linguagens e Compiladores/compilador-lfc" value="3FBq1efNb7ekjXqMcY0qVgMQQ4J" />
     </persistenceIdMap>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProblemsViewState">
-    <hideBySeverity>
-      <option value="11" />
-      <option value="12" />
-      <option value="13" />
-      <option value="14" />
-      <option value="15" />
-      <option value="16" />
-      <option value="200" />
-      <option value="300" />
-    </hideBySeverity>
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
-  <component name="ProjectId" id="3Equ5vwLnLlYAaZbhaJy8pKq7Su" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="3FBq1efNb7ekjXqMcY0qVgMQQ4J" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -50,18 +53,17 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "last_opened_file_path": "C:/Users/isaias.santos/Documents/isaias/ATV Linguagens e Compiladores/compilador-lfc",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main"
   }
 }]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="038ba7e3-fa1d-43b5-a448-ce56cd1075b9" name="Changes" comment="" />
-      <created>1780918240931</created>
+      <changelist id="daf48da7-c4be-4f7e-acc9-e0e44973d527" name="Changes" comment="" />
+      <created>1781558598489</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1780918240931</updated>
+      <updated>1781558598489</updated>
     </task>
     <servers />
   </component>

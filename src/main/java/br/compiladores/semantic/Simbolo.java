@@ -1,12 +1,15 @@
 package br.compiladores.semantic;
 
 public class Simbolo {
-    private String nome;
-    private Tipo tipo;
 
-    public Simbolo(String nome, Tipo tipo) {
+    private final String nome;
+    private final Tipo tipo;
+    private final int deslocamento;
+
+    public Simbolo(String nome, Tipo tipo, int deslocamento) {
         this.nome = nome;
         this.tipo = tipo;
+        this.deslocamento = deslocamento;
     }
 
     public String getNome() {
@@ -15,5 +18,9 @@ public class Simbolo {
 
     public Tipo getTipo() {
         return tipo;
+    }
+
+    public int getDeslocamento() {
+        return deslocamento;
     }
 }

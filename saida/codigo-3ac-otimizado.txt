@@ -1,0 +1,21 @@
+; Código intermediário em três endereços
+; Início do programa
+DECL idade : INTEGER
+DECL ativo : BOOLEAN
+idade = 24
+t2 = idade >= 18
+ativo = t2
+IF ativo == 0 GOTO L0
+WRITE "Maior de idade"
+GOTO L1
+L0:
+WRITE "Menor de idade"
+L1:
+L2:
+t3 = idade < 25
+IF t3 == 0 GOTO L3
+t4 = idade + 1
+idade = t4
+GOTO L2
+L3:
+; Fim do programa

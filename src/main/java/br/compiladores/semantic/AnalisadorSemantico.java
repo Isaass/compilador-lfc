@@ -5,10 +5,11 @@ import br.compiladores.parser.SimpleLangParser;
 
 public class AnalisadorSemantico extends SimpleLangBaseVisitor<Tipo> {
 
-    private final TabelaSimbolos tabela = new TabelaSimbolos();
+    private final TabelaSimbolos escopoGlobal = new TabelaSimbolos();
+    private TabelaSimbolos escopoAtual = escopoGlobal;
 
     public TabelaSimbolos getTabela() {
-        return tabela;
+        return escopoGlobal;
     }
 
     @Override
@@ -17,8 +18,22 @@ public class AnalisadorSemantico extends SimpleLangBaseVisitor<Tipo> {
 
         for (var tokenId : ctx.listaIds().ID()) {
             String nome = tokenId.getText();
-            tabela.declarar(nome, tipo);
+            escopoAtual.declarar(nome, tipo);
         }
+
+        return null;
+    }
+
+    @Override
+    public Tipo visitComandoComposto(SimpleLangParser.ComandoCompostoContext ctx) {
+        TabelaSimbolos escopoAnterior = escopoAtual;
+        escopoAtual = escopoAtual.criarEscopoFilho();
+
+        if (ctx.listaComandos() != null) {
+            visit(ctx.listaComandos());
+        }
+
+        escopoAtual = escopoAnterior;
 
         return null;
     }
@@ -27,14 +42,14 @@ public class AnalisadorSemantico extends SimpleLangBaseVisitor<Tipo> {
     public Tipo visitComandoAtribuicao(SimpleLangParser.ComandoAtribuicaoContext ctx) {
         String nomeVariavel = ctx.ID().getText();
 
-        Tipo tipoVariavel = tabela.buscar(nomeVariavel).getTipo();
+        Tipo tipoVariavel = escopoAtual.buscar(nomeVariavel).getTipo();
         Tipo tipoExpressao = visit(ctx.expressao());
 
         if (tipoVariavel != tipoExpressao) {
             throw new RuntimeException(
                     "Erro semântico: variável '" + nomeVariavel +
-                            "' é do tipo " + tipoVariavel +
-                            ", mas recebeu expressão do tipo " + tipoExpressao + "."
+                    "' é do tipo " + tipoVariavel +
+                    ", mas recebeu expressão do tipo " + tipoExpressao + "."
             );
         }
 
@@ -45,7 +60,7 @@ public class AnalisadorSemantico extends SimpleLangBaseVisitor<Tipo> {
     public Tipo visitComandoRead(SimpleLangParser.ComandoReadContext ctx) {
         for (var tokenId : ctx.listaIds().ID()) {
             String nome = tokenId.getText();
-            tabela.buscar(nome);
+            escopoAtual.buscar(nome);
         }
 
         return null;
@@ -162,7 +177,22 @@ public class AnalisadorSemantico extends SimpleLangBaseVisitor<Tipo> {
         }
 
         if (ctx.OPAD() != null) {
-            Tipo tipo = visit(ctx.expressaoUnaria());
+            String operador = ctx.OPAD().getText();
+            SimpleLangParser.ExpressaoUnariaContext expressaoInterna = ctx.expressaoUnaria();
+
+            if (ehConstanteInteiraDireta(expressaoInterna)) {
+                long valor = Long.parseLong(expressaoInterna.expressaoPrimaria().CTE().getText());
+
+                if (operador.equals("-")) {
+                    validarIntervaloInteiro(-valor);
+                } else {
+                    validarIntervaloInteiro(valor);
+                }
+
+                return Tipo.INTEGER;
+            }
+
+            Tipo tipo = visit(expressaoInterna);
 
             if (tipo != Tipo.INTEGER) {
                 throw new RuntimeException("Erro semântico: sinal '+' ou '-' exige INTEGER.");
@@ -178,10 +208,12 @@ public class AnalisadorSemantico extends SimpleLangBaseVisitor<Tipo> {
     public Tipo visitExpressaoPrimaria(SimpleLangParser.ExpressaoPrimariaContext ctx) {
         if (ctx.ID() != null) {
             String nome = ctx.ID().getText();
-            return tabela.buscar(nome).getTipo();
+            return escopoAtual.buscar(nome).getTipo();
         }
 
         if (ctx.CTE() != null) {
+            long valor = Long.parseLong(ctx.CTE().getText());
+            validarIntervaloInteiro(valor);
             return Tipo.INTEGER;
         }
 
@@ -198,6 +230,18 @@ public class AnalisadorSemantico extends SimpleLangBaseVisitor<Tipo> {
         }
 
         return Tipo.INVALIDO;
+    }
+
+    private boolean ehConstanteInteiraDireta(SimpleLangParser.ExpressaoUnariaContext ctx) {
+        return ctx.expressaoPrimaria() != null && ctx.expressaoPrimaria().CTE() != null;
+    }
+
+    private void validarIntervaloInteiro(long valor) {
+        if (valor < -32768 || valor > 32767) {
+            throw new RuntimeException(
+                    "Erro semântico: overflow de constante INTEGER. Valor fora do intervalo de 2 bytes com sinal: " + valor
+            );
+        }
     }
 
     private Tipo obterTipo(SimpleLangParser.TipoContext ctx) {
